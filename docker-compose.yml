@@ -1,0 +1,13 @@
+services:
+  dev:
+    build:
+      context: .
+    platform: linux/amd64
+    image: c-dev:ubuntu24.04-amd64
+    working_dir: /workspace
+    volumes:
+      # current Mac directory <-> /workspace in the container
+      - .:/workspace
+    stdin_open: true
+    tty: true
+    command: bash
